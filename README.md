@@ -20,6 +20,6 @@ Vue.js is an open-source model–view–viewmodel front end JavaScript framework
 
 Navigate to the desired folder and use following commands:
 
-> vue create <name>
+> vue create <name>  
 > npm run serve
 
