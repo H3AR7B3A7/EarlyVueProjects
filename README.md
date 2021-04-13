@@ -23,3 +23,16 @@ Navigate to the desired folder and use following commands:
 > vue create <name>  
 > npm run serve
 
+# Displaying Data
+
+## Interpolation
+{{ }}
+
+## Event Handling
+@event
+
+## Binding to Properties
+:property
+
+## Two-Way Binding Inputs
+v-model
