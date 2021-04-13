@@ -151,3 +151,13 @@ export default {
   },
 };
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+div, button {
+  margin : 10px;
+}
+h2 {
+  font-size: var(--large-size);
+}
+</style>
