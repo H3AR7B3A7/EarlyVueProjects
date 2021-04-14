@@ -2,7 +2,7 @@
   <div>
     <h1>{{ title }}</h1>
     <div class="selected">
-      <span v-if="selectedCar.id > 0">
+      <span v-if="selectedCar">
         <h2>{{`${selectedCar.brand} - ${selectedCar.type}`}}</h2>
         <img v-bind:src="selectedCar.pic" alt="car">
       </span>
@@ -25,12 +25,7 @@ export default {
   },
   data() {
     return {
-      selectedCar: {
-          id: 0,
-          brand: "",
-          type: "",
-          pic: "",
-        },
+      selectedCar: undefined,
       cars: [
         {
           id: 1,
