@@ -16,12 +16,31 @@ Vue.js is an open-source model–view–viewmodel front end JavaScript framework
 - Vue Snippets
 - TSLint
 
-## Creating a Project
+## Project Commands
 
-Navigate to the desired folder and use following commands:
+### Setup Existing Project
 
-> vue create <name>  
-> npm run serve
+Navigate to the project folder and use following command:
+
+>npm install
+
+### Creating Project
+
+Navigate to the desired folder and use following command:
+
+>vue create <name>
+
+### Compiles and hot-reloads for development
+
+>npm run serve
+
+### Compiles and minifies for production
+
+>npm run build
+
+### Lints and fixes files
+
+>npm run lint
 
 # Displaying Data
 
@@ -37,10 +56,41 @@ Navigate to the desired folder and use following commands:
 ## Two-Way Binding Inputs
 v-model
 
-## Lists
-v-for
-
 ## Add or remove DOM Elements
 v-if
 
 ## Hide or Show DOM Elements
+v-show
+
+## Lists
+v-for
+
+# Defining and Manipulating Data
+
+## Define
+date()
+
+## Custom Logic
+methods
+
+## Lifecycle Hooks
+- beforeCreate
+- created
+- beforeMounted
+- mounted
+- beforeUpdate
+- updated
+- beforeDestroy
+- destroyed
+
+## Property Depending on Values
+computed
+
+## Logic on Data Model Changes
+watch
+
+## Output Transformations
+filter
+
+# Component Communication
+
