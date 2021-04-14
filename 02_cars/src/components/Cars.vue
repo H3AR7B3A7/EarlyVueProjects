@@ -7,7 +7,12 @@ export default {
   name: 'Cars',
   props: {
     title: String
-  }
+  },
+  data() {
+    return {
+      cars: []
+    }
+  },
 }
 </script>
 
