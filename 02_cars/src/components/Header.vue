@@ -24,9 +24,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-ul {
-  align-content: center;
-}
 li {
   display: inline-block;
   vertical-align: top;
