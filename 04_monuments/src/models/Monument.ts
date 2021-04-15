@@ -3,4 +3,5 @@ export interface Monument {
     name: string;
     country: string;
     visited: boolean;
+    pic: string;
 }
