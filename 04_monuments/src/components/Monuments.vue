@@ -11,15 +11,17 @@
         />
       </span>
     </div>
-    <h1>Favorites:</h1>
-    <div class="collection">
-      <span v-for="favorite in favorites" :key="favorite.id">
-        <img
-          v-bind:src="favorite.pic"
-          alt="monument"
-          @click="favorites.pop(monument)"
-        />
-      </span>
+    <div v-if="favorites.length > 0">
+      <h1>Favorites:</h1>
+      <div class="collection">
+        <span v-for="favorite in favorites" :key="favorite.id">
+          <img
+            v-bind:src="favorite.pic"
+            alt="monument"
+            @click="favorites.pop(monument)"
+          />
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -34,8 +36,6 @@ export default class Monuments extends Vue {
 
   data() {
     return {
-      currentMonument: undefined as Monument,
-
       monuments: [
         {
           id: 1,
@@ -74,8 +74,6 @@ export default class Monuments extends Vue {
       favorites: new Array<Monument>(),
     };
   }
-
-  methods: {};
 
   addToFavorites(monument: Monument): void {
     if (!this.$data.favorites.includes(monument)) {
