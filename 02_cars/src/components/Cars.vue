@@ -9,9 +9,7 @@
     </div>
     <div class="collection">
       <span v-for="car in cars" :key="car.id">
-        <a @click="selectedCar = car">
-        <img v-bind:src="car.pic" alt="car">
-        </a>
+        <img :class="{'is-active': selectedCar === car}" v-bind:src="car.pic" alt="car" @click="selectedCar = car">
       </span>
     </div>
   </div>
@@ -67,13 +65,23 @@ h1 {
   margin-top: 60px;
 }
 .selected {
-  height: 400px;
+  height: 470px;
 }
 .selected img {
   height: 400px;
+  object-fit: fill;
+}
+.collection {
+  width: 100%;
 }
 .collection img {
   width: 100px;
   height: 50px;
+}
+.is-active {
+  border: 5px solid rgb(51, 58, 119);
+  width: 110px !important;
+  height: 60px !important;
+  transform: translateY(5px);
 }
 </style>
