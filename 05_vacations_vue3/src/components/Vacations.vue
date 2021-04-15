@@ -1,11 +1,13 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <span v-for="destination in destinations" :key="destination.id">
+    <span v-for="destination in destinations" :key="destination.id" @click="selectedDestination = destination">
       <h2>{{ destination.hotel }}</h2>
       <h3>{{ `${destination.city} - ${destination.country}` }}</h3>
       <img v-bind:src=destination.pic alt="destination">
     </span>
+    <h1>Selected:</h1>
+    <h2>{{ fullPlaceName }}</h2>
   </div>
 </template>
 
@@ -31,6 +33,20 @@ export default defineComponent({
         { id: 4, country: "USA", city: "Florida, Rosemary Beach", hotel: "The Pearl Hotel", rating: 5, pic: "https://www.luxurylink.com/images/sho_5ff4dc5c/12028_602-630/image-12028_602.jpg"},
         { id: 5, country: "France", city: "Marseille", hotel: "Hotel Dieu", rating: 5, pic: "https://www.luxurylink.com/images/sho_58126216/2578703_502-630/image-2578703_502.jpg"}
       ] as Destination[]
+    }
+  },
+  computed: {
+    fullPlaceName: {
+      get() : string {
+        let placeName = this.selectedDestination.city
+        placeName += this.selectedDestination.country ? ` -  ${this.selectedDestination.country}`: '';
+        return placeName
+      },
+      set(placeName: string) : void {
+        let parts = placeName.split(' - ');
+        this.selectedDestination.city = parts[0];
+        this.selectedDestination.country = parts.length === 1 ? '' : parts[1];
+      }
     }
   },
 });
