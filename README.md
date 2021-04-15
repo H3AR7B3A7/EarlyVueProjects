@@ -30,7 +30,7 @@ Vue.js is an open-source model–view–viewmodel front end JavaScript framework
 
 Component definitions have changed and we will need to change the default App.vue and HelloWord.vue files accordingly:
 
-  - In HelloWorld.vue:
+    - In HelloWorld.vue:
 
 ```
 <script lang="ts">
@@ -48,7 +48,8 @@ export default defineComponent({
 </script>
 ```
 
-  - In App.vue:
+    - In App.vue:
+
 ```
 <script lang="ts">
 import { defineComponent } from 'vue';
