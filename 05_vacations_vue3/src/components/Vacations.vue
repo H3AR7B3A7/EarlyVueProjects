@@ -6,8 +6,10 @@
       <h3>{{ `${destination.city} - ${destination.country}` }}</h3>
       <img v-bind:src=destination.pic alt="destination">
     </span>
-    <h1>Selected:</h1>
-    <h2>{{ fullPlaceName }}</h2>
+    <div v-if="selectedDestination">
+      <h1>Selected:</h1>
+      <h2>{{ fullPlaceName }}</h2>
+    </div>
   </div>
 </template>
 
@@ -25,7 +27,7 @@ export default defineComponent({
   },
   data() {
     return {
-      selectedDestination: { } as Destination,
+      selectedDestination: undefined as unknown as Destination,
       destinations: [
         { id: 1, country: "Greece", city: "Santorini", hotel: "Santo Maris Oia", rating: 5, pic: "https://www.luxurylink.com/images/sho_5f60fe9c/2579147_601-630/image-2579147_601.jpg"},
         { id: 2, country: "Vietnam", city: "Con Dao", hotel: "Santo Maris Oia", rating: 5, pic: "https://www.luxurylink.com/images/sho_5d4d8eda/2579370_551-630/image-2579370_551.jpg"},
@@ -36,17 +38,20 @@ export default defineComponent({
     }
   },
   computed: {
-    fullPlaceName: {
-      get() : string {
-        let placeName = this.selectedDestination.city
-        placeName += this.selectedDestination.country ? ` -  ${this.selectedDestination.country}`: '';
-        return placeName
-      },
-      set(placeName: string) : void {
-        let parts = placeName.split(' - ');
-        this.selectedDestination.city = parts[0];
-        this.selectedDestination.country = parts.length === 1 ? '' : parts[1];
-      }
+    // fullPlaceName: { // Full getter / setter example
+    //   get() : string {
+    //     let placeName = this.selectedDestination.city
+    //     placeName += this.selectedDestination.country ? ` -  ${this.selectedDestination.country}`: '';
+    //     return placeName
+    //   },
+    //   set(placeName: string) : void {
+    //     let parts = placeName.split(' - ');
+    //     this.selectedDestination.city = parts[0];
+    //     this.selectedDestination.country = parts.length === 1 ? '' : parts[1];
+    //   }
+    // }
+    fullPlaceName () : string { // Short example
+      return `${this.selectedDestination.city} - ${this.selectedDestination.country}`
     }
   },
 });
