@@ -7,11 +7,12 @@
         <img v-bind:src="selectedCar.pic" alt="car">
       </span>
     </div>
-    <div class="collection">
+    <div class="collection" v-show="showCollection">
       <span v-for="car in cars" :key="car.id">
         <img :class="{'is-active': selectedCar === car}" v-bind:src="car.pic" alt="car" @click="selectedCar = car">
       </span>
     </div>
+    <input type="checkbox" v-model="showCollection"> Hide
   </div>
 </template>
 
@@ -24,6 +25,7 @@ export default {
   data() {
     return {
       selectedCar: undefined,
+      showCollection: true,
       cars: [
         {
           id: 1,
