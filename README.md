@@ -16,6 +16,59 @@ Vue.js is an open-source model–view–viewmodel front end JavaScript framework
 - Vue Snippets
 - TSLint
 
+## Support & Plugins
+
+### Support
+
+- Typescript
+
+>vue add typescript
+
+- Vue 3 (currently in separate release)
+
+>vue add vue-next
+
+Component definitions have changed and we will need to change the default App.vue and HelloWord.vue files accordingly:
+
+  - In HelloWorld.vue:
+
+```
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'HelloWorld',
+  props: {
+    msg: {
+      type: String,
+      required: false,
+    },
+  },
+});
+</script>
+```
+
+  - In App.vue:
+```
+<script lang="ts">
+import { defineComponent } from 'vue';
+import HelloWorld from '@/components/HelloWorld.vue'
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    HelloWorld
+  },
+});
+</script>
+```
+
+### Plugins
+
+- Vuetify
+
+>vue add vuetify
+
 ## Project Commands
 
 ### Setup Existing Project
