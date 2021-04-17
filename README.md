@@ -70,6 +70,17 @@ export default defineComponent({
 
 >vue add vuetify
 
+- Notifications
+
+>npm install vue-notification
+
+In main.js:
+```
+import Notifications from 'vue-notification'
+ 
+Vue.use(Notifications)
+```
+
 ## Project Commands
 
 ### Setup Existing Project
