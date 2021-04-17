@@ -1,6 +1,5 @@
 <template>
   <div>
-    <notifications group="notif"  position="top left"/>
     <h1>{{ title }}</h1>
     <div class="selected"></div>
     <div class="collection">
@@ -131,7 +130,7 @@ export default class Monuments extends Vue {
       text: 'Before update'
     });
   }
-  
+
   updated(){
     console.log("Updated")
     this.$notify({

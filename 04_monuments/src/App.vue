@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <notifications group="notif"  position="top left"/>
     <Monuments title="Monuments !!!"/>
   </div>
 </template>
