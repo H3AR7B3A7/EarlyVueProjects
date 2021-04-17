@@ -130,7 +130,7 @@ methods
 ## Lifecycle Hooks
 - beforeCreate
 - created
-- beforeMounted
+- beforeMount
 - mounted
 - beforeUpdate
 - updated
