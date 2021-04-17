@@ -1,5 +1,6 @@
 <template>
   <div>
+    <notifications group="notif"  position="top left"/>
     <h1>{{ title }}</h1>
     <div class="selected"></div>
     <div class="collection">
@@ -79,6 +80,86 @@ export default class Monuments extends Vue {
     if (!this.$data.favorites.includes(monument)) {
       this.$data.favorites.push(monument);
     }
+  }
+
+  beforeCreate(){
+    console.log("Before create")
+    this.$notify({
+      group: 'notif',
+      type: 'success',
+      title: 'Lifecycle',
+      text: 'Before create'
+    });
+  }
+
+  created(){
+    console.log("Created")
+    this.$notify({
+      group: 'notif',
+      type: 'success',
+      title: 'Lifecycle',
+      text: 'Created'
+    });
+  }
+
+  beforeMount(){
+    console.log("Before mount")
+    this.$notify({
+      group: 'notif',
+      type: 'success',
+      title: 'Lifecycle',
+      text: 'Before mounted'
+    });
+  }
+
+  mounted(){
+    console.log("Mounted")
+    this.$notify({
+      group: 'notif',
+      type: 'success',
+      title: 'Lifecycle',
+      text: 'Mounted'
+    });
+  }
+
+  beforeUpdate(){
+    console.log("Before update")
+    this.$notify({
+      group: 'notif',
+      type: 'success',
+      title: 'Lifecycle',
+      text: 'Before update'
+    });
+  }
+  
+  updated(){
+    console.log("Updated")
+    this.$notify({
+      group: 'notif',
+      type: 'warn',
+      title: 'Lifecycle',
+      text: 'Updated...'
+    });
+  }
+
+  beforeDestroy(){
+    console.log("Before destroy")
+    this.$notify({
+      group: 'notif',
+      type: 'success',
+      title: 'Lifecycle',
+      text: 'Before destroy'
+    });
+  }
+
+  destroyed(){
+    console.log("Destroyed")
+    this.$notify({
+      group: 'notif',
+      type: 'success',
+      title: 'Lifecycle',
+      text: 'Destroyed'
+    });
   }
 }
 </script>
