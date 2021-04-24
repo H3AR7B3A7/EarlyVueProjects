@@ -64,6 +64,10 @@ export default defineComponent({
 </script>
 ```
 
+- Property Decorator
+
+>npm install vue-property-decorator
+
 ### Plugins
 
 - Vuetify
